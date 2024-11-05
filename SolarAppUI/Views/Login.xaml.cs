@@ -1,0 +1,35 @@
+
+
+namespace SolarAppUI.Views;
+
+public partial class Login : ContentPage
+{
+	public Login()
+	{
+		InitializeComponent();
+	}
+
+
+    /// <summary>
+    /// Función que al pulsar el botón de login comprueba que las credenciales sean correctas,
+    /// en caso afirmativo pasa a la siguiente pantalla y en caso negativo, muestra un mensaje de error.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private async void LoginButton_Click(object sender, EventArgs e)
+    {
+        string username = txtUsername.Text;
+        string password = txtPassword.Text;
+
+        if (username == "amaro" && password == "password")
+        {
+            await DisplayAlert("Éxito", "Inicio de sesión exitoso", "OK");
+            // Cambia la página principal a AppShell
+            Application.Current.MainPage = new AppShell();
+        }
+        else
+        {
+            await DisplayAlert("Error", "Usuario o contraseña incorrectos", "OK");
+        }
+    }
+}

@@ -1,15 +1,26 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Shell
     x:Class="SolarAppUI.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:SolarAppUI"
-    Shell.FlyoutBehavior="Disabled"
-    Title="SolarAppUI">
+    xmlns:views="clr-namespace:SolarAppUI.Views"
+    Shell.FlyoutBackgroundColor="#3e4d6e"
+    Shell.FlyoutBehavior="Locked">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <StackLayout HeightRequest="150">
+                <Label Text="Menú"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"/>
+            </StackLayout>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+
+    <FlyoutItem Title="Citas">
+        <ShellContent ContentTemplate="{DataTemplate views:Home}" Route="home"/>
+    </FlyoutItem>
 
 </Shell>

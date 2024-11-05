@@ -1,4 +1,6 @@
-﻿namespace SolarAppUI
+﻿using SolarAppUI.Views;
+
+namespace SolarAppUI
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new NavigationPage(new Login());
         }
     }
 }

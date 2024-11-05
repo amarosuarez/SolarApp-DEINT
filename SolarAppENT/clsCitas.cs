@@ -4,9 +4,10 @@
     {
         #region Propiedades
         public int Id { get; set; }
-        public string Nombre { get; set; }
 
         public DateTime Fecha { get; set; }
+
+        public Boolean Completada { get; set; }
 
         public clsCliente Cliente { get; set; }
         #endregion
@@ -14,11 +15,11 @@
         #region Constructores
         public clsCitas() { }
 
-        public clsCitas(int id, string nombre, string ubicacion, string fecha, clsCliente cliente)
+        public clsCitas(int id, string fecha, Boolean completada, clsCliente cliente)
         {
             Id = id;
-            Nombre = nombre;
             Fecha = DateTime.Parse(fecha);
+            Completada = completada;
             Cliente = cliente;
         }
         #endregion
