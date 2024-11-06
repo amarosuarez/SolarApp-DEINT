@@ -5,14 +5,13 @@
              BackgroundColor="#e9ebf0">
 
     <ScrollView>
-
         <VerticalStackLayout>
-            <Grid Margin="20, 20, 20, 0" >
+            <Grid Margin="20, 20, 20, 0">
                 <Label Text="CITAS DE HOY" TextColor="Black" FontAttributes="Bold" FontSize="30" Grid.Column="0" />
                 <Label Text="{Binding FechaHoy}" TextColor="Black" FontSize="16" FontAttributes="Bold" HorizontalTextAlignment="End" HorizontalOptions="End" Grid.Column="1" />
             </Grid>
 
-            <ListView x:Name="listaView" Margin="20" ItemSelected="OnCitaSelected">
+            <ListView x:Name="listaView" Margin="20" ItemSelected="OnCitaSelected" VerticalOptions="FillAndExpand" HasUnevenRows="false" RowHeight="80">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -33,10 +32,10 @@
                                        FontAttributes="Bold" 
                                        VerticalOptions="Center" />
 
-
                                     <Image Source="next_page.png" 
-                                       Aspect="AspectFill" 
-                                       HeightRequest="48"  />
+                                           VerticalOptions="Center"
+                                           Aspect="AspectFill" 
+                                           HeightRequest="48" />
                                 </StackLayout>
                             </VerticalStackLayout>
                         </ViewCell>
@@ -46,9 +45,8 @@
 
 
             <Label Text="ESTAS SON TODAS TUS CITAS DE HOY" TextColor="Gray" FontAttributes="Bold" FontSize="20" Margin="20, 0, 0, 20" />
-
         </VerticalStackLayout>
-
     </ScrollView>
+
 
 </ContentPage>

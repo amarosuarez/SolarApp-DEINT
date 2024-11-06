@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SolarAppUI.Views.Login"
-             Title="Login">
-    <Grid Margin="20">
+             x:Class="SolarAppUI.Views.Login">
+    <Grid Padding="20" RowDefinitions="*, Auto, Auto">
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
             <Image Source="logo.png"
                    WidthRequest="220" 
@@ -12,25 +10,22 @@
                    HorizontalOptions="Center" />
 
             <Label FontSize="30" Text="SOLARAPP" TextColor="#0022ff" FontAttributes="Bold" Margin="20,10,0,10" HorizontalTextAlignment="Center"/>
-
-            <Frame BackgroundColor="#3d4d6d" CornerRadius="10" WidthRequest="500">
-                <VerticalStackLayout HorizontalOptions="Center">
-                    <Label Text="Nombre de usuario" FontSize="18" Margin="0,10,0,5" FontAttributes="Bold" TextColor="White"/>
-                    <Entry x:Name="txtUsername" TextColor="White" BackgroundColor="Gray" Placeholder="Nombre de usuario" WidthRequest="460" HeightRequest="30" Margin="0,0,0,10"/>
-
-                    <Label Text="Contraseña" FontSize="18" Margin="0,10,0,5" FontAttributes="Bold" TextColor="White"/>
-                    <Entry x:Name="txtPassword" TextColor="White" BackgroundColor="Gray" Placeholder="************" IsPassword="True" WidthRequest="460" HeightRequest="30" />
-
-                    <Label Text="He olvidado mi contraseña" TextColor="#7f8fea" FontAttributes="Bold" Margin="0,5,0,10" />
-
-                    <Button Text="ACCEDER" BackgroundColor="White" TextColor="Black" FontSize="18" FontAttributes="Bold" WidthRequest="460" HeightRequest="30" Clicked="LoginButton_Click" Margin="0,20" />
-                </VerticalStackLayout>
-            </Frame>
-
-            
         </StackLayout>
 
-        <Label Text="V1.0.0" TextColor="LightGray" FontAttributes="Bold" FontSize="14" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,10,10"/>
+        <Frame BackgroundColor="#3d4d6d" CornerRadius="10" Grid.Row="1" Padding="20">
+            <VerticalStackLayout HorizontalOptions="Center">
+                <Label Text="Nombre de usuario" FontSize="18" Margin="0,10,0,5" FontAttributes="Bold" TextColor="White"/>
+                <Entry x:Name="txtUsername" TextColor="White" BackgroundColor="Gray" Placeholder="Nombre de usuario" HorizontalOptions="FillAndExpand" HeightRequest="40" Margin="0,0,0,10"/>
 
+                <Label Text="Contraseña" FontSize="18" Margin="0,10,0,5" FontAttributes="Bold" TextColor="White"/>
+                <Entry x:Name="txtPassword" TextColor="White" BackgroundColor="Gray" Placeholder="************" IsPassword="True" HorizontalOptions="FillAndExpand" HeightRequest="40" />
+
+                <Label Text="He olvidado mi contraseña" TextColor="#7f8fea" FontAttributes="Bold" Margin="0,5,0,10" HorizontalOptions="Center" />
+
+                <Button Text="ACCEDER" BackgroundColor="White" TextColor="Black" FontSize="18" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HeightRequest="40" Margin="0,20" Clicked="LoginButton_Click" />
+            </VerticalStackLayout>
+        </Frame>
+
+        <Label Text="V1.0.0" TextColor="LightGray" FontAttributes="Bold" FontSize="14" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,10,10"/>
     </Grid>
 </ContentPage>
