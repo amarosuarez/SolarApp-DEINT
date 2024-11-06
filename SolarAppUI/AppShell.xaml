@@ -10,7 +10,6 @@
     <Shell.FlyoutHeaderTemplate>
         <DataTemplate>
             <StackLayout HeightRequest="150" BackgroundColor="#3e4d6e" Padding="10" VerticalOptions="Center">
-                <!-- Imagen circular -->
                 <Frame HeightRequest="104"
                    WidthRequest="104"
                    CornerRadius="70"
@@ -29,7 +28,6 @@
                 </Frame>
 
 
-                <!-- Texto debajo de la imagen -->
                 <Label Text="Técnico Juan"
                    TextColor="White"
                    FontAttributes="Bold"

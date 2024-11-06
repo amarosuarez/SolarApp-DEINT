@@ -2,7 +2,7 @@
 
 namespace SolarAppENT
 {
-    public class clsCitas
+    public class clsCita
     {
         #region Propiedades
         public int Id { get; set; }
@@ -23,9 +23,9 @@ namespace SolarAppENT
         #endregion
 
         #region Constructores
-        public clsCitas() { }
+        public clsCita() { }
 
-        public clsCitas(int id, string fecha, Boolean completada, clsCliente cliente)
+        public clsCita(int id, string fecha, Boolean completada, clsCliente cliente)
         {
             Id = id;
             Fecha = DateTime.Parse(fecha);

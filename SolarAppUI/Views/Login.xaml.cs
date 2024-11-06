@@ -21,7 +21,7 @@ public partial class Login : ContentPage
         string username = txtUsername.Text;
         string password = txtPassword.Text;
 
-        if (username == "amaro" && password == "password")
+        if (username == "amaro" && password == "1234")
         {
             await DisplayAlert("Éxito", "Inicio de sesión exitoso", "OK");
             // Cambia la página principal a AppShell

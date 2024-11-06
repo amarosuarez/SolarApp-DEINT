@@ -9,10 +9,9 @@ public partial class Home : ContentPage
 	{
 		InitializeComponent();
 
-		List<clsCitas> lista = clsListadoCitas.obtenerCitas();
+		List<clsCita> lista = clsListadoCitas.obtenerCitas();
 
 		listaView.ItemsSource = lista;
-
 	}
 
     /// <summary>
@@ -22,7 +21,7 @@ public partial class Home : ContentPage
     /// <param name="e"></param>
     private async void OnCitaSelected(object sender, SelectedItemChangedEventArgs e)
     {
-        var citaSeleccionada = e.SelectedItem as clsCitas;
+        var citaSeleccionada = e.SelectedItem as clsCita;
 
         if (citaSeleccionada != null)
         {

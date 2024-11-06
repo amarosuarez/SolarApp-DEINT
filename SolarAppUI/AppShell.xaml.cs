@@ -10,6 +10,7 @@ namespace SolarAppUI
             Routing.RegisterRoute("home", typeof(Home));
             Routing.RegisterRoute("informes", typeof(Informes));
             Routing.RegisterRoute("logout", typeof(LogOut));
+            Routing.RegisterRoute("detallecita", typeof(DetalleCita)); 
         }
     }
 }

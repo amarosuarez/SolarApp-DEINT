@@ -4,7 +4,7 @@ namespace SolarAppUI.Views
 {
     public partial class DetalleCita : ContentPage
     {
-        public DetalleCita(clsCitas cita)
+        public DetalleCita(clsCita cita)
         {
             InitializeComponent();
 
