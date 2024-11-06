@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SolarAppUI.Views.DetalleCita"
+             BackgroundColor="#e9ebf0">
+
+    <ScrollView Padding="20">
+        <StackLayout>
+            
+            <Image Source="map.png" 
+               Aspect="AspectFill" 
+               HeightRequest="200" 
+               Margin="0,10,0,0" />
+
+            <Label Text="{Binding Cliente.Direccion}" FontSize="20" TextColor="Black" />
+
+            <StackLayout Orientation="Horizontal">
+
+                <StackLayout Orientation="Vertical">
+                    <Label Text="{Binding Fecha, StringFormat='HORA {0:HH:mm}'}" FontSize="14" TextColor="Black" Margin="0,10,0,0" />
+                    <Label Text="{Binding Cliente.Nombre}" FontSize="30" TextColor="Black" FontAttributes="Bold" />
+                    <Label Text="{Binding Cliente.Telefono}" FontSize="18" TextColor="Black" />
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="EndAndExpand"></StackLayout>
+
+                <Button BackgroundColor="Gray"
+                    WidthRequest="60" 
+                    HeightRequest="60"
+                    CornerRadius="30"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
+                    <Button.ImageSource>
+                        <FontImageSource FontFamily="FontAwesome"
+                             Glyph="📞" />
+                    </Button.ImageSource>
+                </Button>
+
+            </StackLayout>
+
+
+            <Label Text="Observaciones:" FontSize="20" TextColor="Black" Margin="0,20,0,0" />
+            <Editor Placeholder="Escriba sus observaciones aquí..." 
+                    TextColor="Black" 
+                    HeightRequest="100" 
+                    VerticalOptions="Start" />
+
+            <Button Text="Seleccionar Foto" Margin="0,20,0,0" />
+
+            <StackLayout
+                Orientation="Horizontal"
+                Margin="0,20,0,0">
+                <Label Text="¿Es apta para instalación?" FontSize="20" TextColor="Black" VerticalOptions="Center"/>
+
+                <CheckBox x:Name="checkApto" Color="Green" VerticalOptions="Center" Margin="20,0,0,0" />
+            </StackLayout>
+
+            <Button Text="Guardar Informe" Clicked="OnGuardarInformeClicked" Margin="0,20,0,0" BackgroundColor="#4CAF50" TextColor="White" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

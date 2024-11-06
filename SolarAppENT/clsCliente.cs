@@ -9,25 +9,25 @@ namespace SolarAppENT
     public class clsCliente
     {
         #region Atributos
-        public int Id {  get; set; }
+        public int Id { get; set; }
 
         public string Nombre { get; set; }
 
-        public string Direccion {  get; set; }
+        public string Direccion { get; set; }
 
-        public int Telefono {
-            get { return Telefono; }
-            set { 
-                if (value.ToString().Length == 9)
-                    Telefono = value;
-            }
+        private long _telefono;
+
+        public long Telefono
+        {
+            get { return _telefono; }
+            set { _telefono = value; }
         }
         #endregion
 
         #region Constructores
         public clsCliente() { }
 
-        public clsCliente(int id, string nombre, string direccion, int telefono)
+        public clsCliente(int id, string nombre, string direccion, long telefono)
         {
             Id = id;
             Nombre = nombre;

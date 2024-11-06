@@ -1,4 +1,6 @@
-﻿namespace SolarAppENT
+﻿using System.Drawing;
+
+namespace SolarAppENT
 {
     public class clsCitas
     {
@@ -10,6 +12,14 @@
         public Boolean Completada { get; set; }
 
         public clsCliente Cliente { get; set; }
+
+        public string TextoCompletado
+        {
+            get
+            {
+                return Completada ? "COMPLETADA" : "POR COMPLETAR";
+            }
+        }
         #endregion
 
         #region Constructores
