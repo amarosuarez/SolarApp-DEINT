@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Reflection.Emit;
 
 namespace SolarAppENT
 {
@@ -18,6 +19,14 @@ namespace SolarAppENT
             get
             {
                 return Completada ? "COMPLETADA" : "POR COMPLETAR";
+            }
+        }
+
+        public Color ColorCompletado
+        {
+            get
+            {
+                return Completada ? Color.Green : Color.Red;
             }
         }
         #endregion

@@ -6,20 +6,31 @@
     <Grid Margin="20">
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
             <Image Source="logo.png"
-                   WidthRequest="200" 
-                   HeightRequest="200" 
-                   Aspect="AspectFill"
-                   HorizontalOptions="Center"/>
+                   WidthRequest="220" 
+                   HeightRequest="220" 
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center" />
 
-            <Label FontSize="24" Text="SOLARAPP" Margin="20,10,0,20" HorizontalTextAlignment="Center"/>
+            <Label FontSize="30" Text="SOLARAPP" TextColor="#0022ff" FontAttributes="Bold" Margin="20,10,0,10" HorizontalTextAlignment="Center"/>
 
-            <Label Text="Usuario:" Margin="0,10,0,5"/>
-            <Entry x:Name="txtUsername" WidthRequest="200" HeightRequest="30" Margin="0,0,0,10"/>
+            <Frame BackgroundColor="#3d4d6d" CornerRadius="10" WidthRequest="500">
+                <VerticalStackLayout HorizontalOptions="Center">
+                    <Label Text="Nombre de usuario" FontSize="18" Margin="0,10,0,5" FontAttributes="Bold" TextColor="White"/>
+                    <Entry x:Name="txtUsername" TextColor="White" BackgroundColor="Gray" Placeholder="Nombre de usuario" WidthRequest="460" HeightRequest="30" Margin="0,0,0,10"/>
 
-            <Label Text="Contraseña:" Margin="0,10,0,5"/>
-            <Entry x:Name="txtPassword" IsPassword="True" WidthRequest="200" HeightRequest="30" Margin="0,0,0,20"/>
+                    <Label Text="Contraseña" FontSize="18" Margin="0,10,0,5" FontAttributes="Bold" TextColor="White"/>
+                    <Entry x:Name="txtPassword" TextColor="White" BackgroundColor="Gray" Placeholder="************" IsPassword="True" WidthRequest="460" HeightRequest="30" />
 
-            <Button Text="Iniciar Sesión" WidthRequest="200" HeightRequest="30" Clicked="LoginButton_Click"/>
+                    <Label Text="He olvidado mi contraseña" TextColor="#7f8fea" FontAttributes="Bold" Margin="0,5,0,10" />
+
+                    <Button Text="ACCEDER" BackgroundColor="White" TextColor="Black" FontSize="18" FontAttributes="Bold" WidthRequest="460" HeightRequest="30" Clicked="LoginButton_Click" Margin="0,20" />
+                </VerticalStackLayout>
+            </Frame>
+
+            
         </StackLayout>
+
+        <Label Text="V1.0.0" TextColor="LightGray" FontAttributes="Bold" FontSize="14" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,10,10"/>
+
     </Grid>
 </ContentPage>

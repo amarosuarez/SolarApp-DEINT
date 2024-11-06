@@ -11,8 +11,8 @@ namespace SolarAppDAL
         public static List<clsCita> obtenerCitas()
         {
             return new List<clsCita> {
-                new clsCita(1, "07/11/2024 12:30", false, new clsCliente(1, "Auri", "Calle Twitch 2, 48100", 123456789)),
-                new clsCita(2, "07/11/2024 16:30", false, new clsCliente(2, "Jenri", "Calle Rosa 28, 45120", 987654321)),
+                new clsCita(1, "07/11/2024 12:30", true, new clsCliente(1, "Auri", "Calle Twitch 2, 48100", 123456789)),
+                new clsCita(2, "07/11/2024 16:30", true, new clsCliente(2, "Jenri", "Calle Rosa 28, 45120", 987654321)),
                 new clsCita(3, "07/11/2024 18:30", false, new clsCliente(3, "Lorenzo", "Calle del Sol", 987654321)),
                 new clsCita(4, "08/11/2024 10:30", false, new clsCliente(4, "Marta", "Avenida de la Paz", 912345678)),
                 new clsCita(5, "08/11/2024 12:30", false, new clsCliente(5, "Marcos", "Calle Luna", 654321987)),

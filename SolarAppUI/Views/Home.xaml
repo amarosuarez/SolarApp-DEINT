@@ -7,29 +7,45 @@
     <ScrollView>
 
         <VerticalStackLayout>
-            <Label Text="CITAS DE HOY" TextColor="Black" FontAttributes="Bold" FontSize="30" Margin="20, 20,0,0" />
+            <Grid Margin="20, 20, 20, 0" >
+                <Label Text="CITAS DE HOY" TextColor="Black" FontAttributes="Bold" FontSize="30" Grid.Column="0" />
+                <Label Text="{Binding FechaHoy}" TextColor="Black" FontSize="16" FontAttributes="Bold" HorizontalTextAlignment="End" HorizontalOptions="End" Grid.Column="1" />
+            </Grid>
 
             <ListView x:Name="listaView" Margin="20" ItemSelected="OnCitaSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="10">
-                                <StackLayout Orientation="Vertical">
-                                    <Label Text="{Binding Fecha, StringFormat='HORA {0:HH:mm}'}" TextColor="Black" FontSize="12" VerticalOptions="Center" />
-                                    <Label Text="{Binding Cliente.Nombre}" FontSize="16" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" />
-                                    <Label Text="{Binding Cliente.Direccion}" FontSize="14" TextColor="Black" VerticalOptions="Center" />
+                            <VerticalStackLayout>
+                                <BoxView Color="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+                                <StackLayout Orientation="Horizontal" Padding="10">
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding Fecha, StringFormat='HORA {0:HH:mm}'}" TextColor="Black" FontSize="12" VerticalOptions="Center" />
+                                        <Label Text="{Binding Cliente.Nombre}" FontSize="16" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" />
+                                        <Label Text="{Binding Cliente.Direccion}" FontSize="14" TextColor="Black" VerticalOptions="Center" />
+                                    </StackLayout>
+
+                                    <StackLayout HorizontalOptions="EndAndExpand" />
+
+                                    <Label Text="{Binding TextoCompletado}" 
+                                       FontSize="20" 
+                                       TextColor="{Binding Completada, Converter={StaticResource BooleanToColorConverter}}"
+                                       FontAttributes="Bold" 
+                                       VerticalOptions="Center" />
+
+
+                                    <Image Source="next_page.png" 
+                                       Aspect="AspectFill" 
+                                       HeightRequest="48"  />
                                 </StackLayout>
-
-                                <StackLayout HorizontalOptions="EndAndExpand" />
-
-                                <Label Text="{Binding TextoCompletado}" FontSize="20" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" />
-                            </StackLayout>
+                            </VerticalStackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
 
-            <Label Text="ESTAS SON TODAS TUS CITAS" TextColor="Gray" FontAttributes="Bold" FontSize="20" Margin="20, 0, 0, 20" />
+
+            <Label Text="ESTAS SON TODAS TUS CITAS DE HOY" TextColor="Gray" FontAttributes="Bold" FontSize="20" Margin="20, 0, 0, 20" />
 
         </VerticalStackLayout>
 

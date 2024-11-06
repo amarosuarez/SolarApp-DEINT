@@ -5,11 +5,17 @@ namespace SolarAppUI.Views;
 
 public partial class Home : ContentPage
 {
-	public Home()
+
+    public string FechaHoy { get; set; } = DateTime.Now.ToString("dd/MM/yyyy \n HH:mm");
+
+
+    public Home()
 	{
 		InitializeComponent();
 
-		List<clsCita> lista = clsListadoCitas.obtenerCitas();
+        BindingContext = this;
+
+        List<clsCita> lista = clsListadoCitas.obtenerCitas();
 
 		listaView.ItemsSource = lista;
 	}
